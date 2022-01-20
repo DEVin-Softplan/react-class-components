@@ -1,16 +1,30 @@
 import React from "react";
 
 class ComponenteTeste extends React.Component {
-  componentWillUnmount() {}
+  constructor() {
+    super();
+    console.log("Executado no constructor");
+  }
+  componentDidMount() {
+    console.log("Executado no componentDidMount");
+  }
+  componentDidUpdate() {
+    console.log("Executado no componentDidUpdate");
+  }
+  componentWillUnmount() {
+    console.log("Executado no componentWillUnmount");
+  }
 
   render() {
+    console.log("Executado no render");
+
     return <p>Componente de teste sendo mostrado na tela!</p>;
   }
 }
 
 export class Unmounting extends React.Component {
   state = {
-    mostrar: false,
+    mostrar: true,
   };
 
   render() {

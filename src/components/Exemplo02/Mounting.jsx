@@ -1,9 +1,17 @@
 import React from "react";
 
 export class Mounting extends React.Component {
-  componentDidMount() {}
+  constructor() {
+    super();
+    console.log("Executado no constructor");
+  }
+
+  componentDidMount() {
+    console.log("Executado no componentDidMount");
+  }
 
   render() {
+    console.log("Executado no render");
     return (
       <div>
         <div>

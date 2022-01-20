@@ -2,17 +2,32 @@ import React from "react";
 import { FaRegMoon, FaSun } from "react-icons/fa";
 
 export class Updating extends React.Component {
-  state = {
-    ligado: false,
-  };
+  constructor() {
+    super();
+    console.log("Executou no constructor");
+    this.state = {
+      ligado: false,
+    };
+  }
 
-  componentDidUpdate(prevProps, prevState) {}
+  componentDidMount() {
+    console.log("Executou no componentDidMount");
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log(prevProps);
+    console.log(this.props);
+    console.log(prevState);
+    console.log(this.state);
+    console.log("Executou no componentDidUpdate");
+  }
 
   render() {
+    console.log("Executou no render");
     return (
       <div>
         <div>
-          <h1>Demonstrando o ciclo de vida de atualização </h1>
+          <h1>Demonstrando o ciclo de vida de atualização: {this.props.hello} </h1>
           <div>
             {this.state.ligado ? <FaSun /> : <FaRegMoon />}
             <h2>Light mode está {this.state.ligado ? "ligado" : "desligado"} </h2>
